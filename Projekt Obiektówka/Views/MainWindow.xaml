@@ -8,6 +8,13 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 
         Title="Projekt_gra (Znajdź Pasujące Pary Znaczków)" Height="516" Width="900">
+    <mah:MetroWindow.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource
+            {x:Type Button}}">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </mah:MetroWindow.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150*"/>
@@ -24,6 +31,7 @@
             <RowDefinition Height="90*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
+        
 
         <Button Grid.Row="1" Grid.Column="0" Content="7"/>
         <Button Grid.Row="1" Grid.Column="1" Content="8"/>
@@ -43,6 +51,7 @@
         <Button Grid.Row="3" Grid.Column="4"  Content="-"/>
         <Button Grid.Row="2" Grid.Column="4"  Content="/"/>
         <Button Grid.Row="4" Grid.Column="4"  Content="C"/>
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
 
 
 
