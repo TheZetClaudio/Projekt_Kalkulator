@@ -24,9 +24,16 @@ namespace Projekt_Obiektówka
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewWindow();
 
         }
 
-      
+        private void TextBox_TextChanged()
+        {
+
+        }
+
+       
+
     }
 }
