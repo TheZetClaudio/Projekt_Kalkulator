@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:Projekt_Obiektówka"
         mc:Ignorable="d"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:viewmodels="clr-namespace:Projekt_Obiektówka.ViewModels" 
+        xmlns:view="clr-namespace:Projekt_Obiektówka.View"
+                 
 
-        Title="Projekt_Kalkulator" Height="516" Width="900">
-    
+        Title="Projekt_Kalkulator" Height="569" Width="900">
+ 
 
     <mah:MetroWindow.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource
@@ -23,6 +26,10 @@
             <Setter Property="IsReadOnly" Value="True"/>
 
         </Style>
+
+        <DataTemplate x:Name="HistoryTamplate" DataType="{x:Type viewmodels:HistoryViewModel}">
+            <view:HistoryView DataContext="{Binding}"/>
+        </DataTemplate>
     </mah:MetroWindow.Resources>
     
     <Grid>
@@ -35,6 +42,7 @@
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
             <RowDefinition Height="130*"/>
             <RowDefinition Height="90*"/>
             <RowDefinition Height="90*"/>
@@ -43,30 +51,33 @@
         </Grid.RowDefinitions>
         
 
-        <Button x:Name="Button7" Click="Button_Click" Grid.Row="1" Grid.Column="0" Content="7"/>
-        <Button x:Name="Button8" Click="Button_Click" Grid.Row="1" Grid.Column="1" Content="8"/>
-        <Button x:Name="Button9" Click="Button_Click" Grid.Row="1" Grid.Column="2" Content="9"/>
-        <Button x:Name="Button4" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="4"/>
-        <Button x:Name="Button5" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="5"/>
-        <Button x:Name="Button6" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="6"/>
-        <Button x:Name="Button1" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="1"/>
-        <Button x:Name="Button2" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="2"/>
-        <Button x:Name="Button3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="3"/>
-        <Button x:Name="Button0" Click="Button_Click" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0"/>
-        <Button x:Name="ButtpnP" Click="Button_Click" Grid.Row="4" Grid.Column="2" Content=","/>
+        <Button x:Name="Button7" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="7"/>
+        <Button x:Name="Button8" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="8"/>
+        <Button x:Name="Button9" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="9"/>
+        <Button x:Name="Button4" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="4"/>
+        <Button x:Name="Button5" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="5"/>
+        <Button x:Name="Button6" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="6"/>
+        <Button x:Name="Button1" Click="Button_Click" Grid.Row="4" Grid.Column="0" Content="1"/>
+        <Button x:Name="Button2" Click="Button_Click" Grid.Row="4" Grid.Column="1" Content="2"/>
+        <Button x:Name="Button3" Click="Button_Click" Grid.Row="4" Grid.Column="2" Content="3"/>
+        <Button x:Name="Button0" Click="Button_Click" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="0"/>
+        <Button x:Name="ButtpnP" Click="Button_Click" Grid.Row="5" Grid.Column="2" Content=","/>
 
-        <Button x:Name="ButtonResult" Click="Button_Result" Grid.Row="3" Grid.Column="5" Grid.RowSpan="2"  Content="="/>
-        <Button x:Name="ButtonAdd" Click="Button_Add" Grid.Row="1" Grid.Column="5" Grid.RowSpan="2"  Content="+"/>
-        <Button x:Name="ButtonMult" Click="Button_Mult" Grid.Row="1" Grid.Column="4"  Content="x"/>
-        <Button x:Name="ButtonMinus" Click="Button_Minus" Grid.Row="3" Grid.Column="4"  Content="-"/>
-        <Button x:Name="ButtonDiv" Click="Button_Div" Grid.Row="2" Grid.Column="4"  Content="/"/>
-        <Button x:Name="ButtonClear" Click="Button_Clear" Grid.Row="4" Grid.Column="4"  Content="C"/>
-        <TextBox x:Name="TextResult" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" />
-        <TextBox x:Name="Math" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+        <Button x:Name="ButtonResult" Click="Button_Result" Grid.Row="4" Grid.Column="5" Grid.RowSpan="2"  Content="="/>
+        <Button x:Name="ButtonAdd" Click="Button_Add" Grid.Row="2" Grid.Column="5" Grid.RowSpan="2"  Content="+"/>
+        <Button x:Name="ButtonMult" Click="Button_Mult" Grid.Row="2" Grid.Column="4"  Content="x"/>
+        <Button x:Name="ButtonMinus" Click="Button_Minus" Grid.Row="4" Grid.Column="4"  Content="-"/>
+        <Button x:Name="ButtonDiv" Click="Button_Div" Grid.Row="3" Grid.Column="4"  Content="/"/>
+        <Button x:Name="ButtonClear" Click="Button_Clear" Grid.Row="5" Grid.Column="4"  Content="C"/>
+        <TextBox x:Name="Math" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" />
 
-
-
-
+        <DockPanel Background="Black" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Calculator" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Click="Calculator_Clicked"/>
+                <Button Content="History" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Click="History_Clicked"/>
+            </StackPanel>
+        </DockPanel>
+        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Content="{Binding}"/>
 
     </Grid>
     </mah:MetroWindow>
