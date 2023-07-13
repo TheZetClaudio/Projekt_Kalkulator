@@ -26,14 +26,26 @@ namespace Projekt_Obiektówka.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\zeter\\Desktop\\VS St" +
-            "udia\\Projekt Obiektówka\\Projekt Obiektówka\\DataBase\\Database1.mdf\";Integrated Se" +
-            "curity=True")]
-        public string DataBase {
+            "udia\\Projekt Obiektówka\\Projekt Obiektówka\\BazaDanych.mdf\";Integrated Security=T" +
+            "rue")]
+        public string Bazadanych {
             get {
-                return ((string)(this["DataBase"]));
+                return ((string)(this["Bazadanych"]));
             }
             set {
-                this["DataBase"] = value;
+                this["Bazadanych"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Ustawienie {
+            get {
+                return ((bool)(this["Ustawienie"]));
+            }
+            set {
+                this["Ustawienie"] = value;
             }
         }
     }

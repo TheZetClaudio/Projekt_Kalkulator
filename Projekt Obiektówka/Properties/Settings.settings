@@ -2,8 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Projekt_Obiektówka.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DataBase" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\zeter\Desktop\VS Studia\Projekt Obiektówka\Projekt Obiektówka\DataBase\Database1.mdf";Integrated Security=True</Value>
+    <Setting Name="Bazadanych" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C:\Users\zeter\Desktop\VS Studia\Projekt Obiektówka\Projekt Obiektówka\BazaDanych.mdf";Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Ustawienie" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

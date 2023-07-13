@@ -8,5 +8,6 @@ namespace Projekt_Obiektówka.ViewModels
 {
     public class HistoryViewModel
     {
+
     }
 }
